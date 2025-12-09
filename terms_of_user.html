@@ -1,558 +1,744 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Terms of Use for Airlytica</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --bg: #0b1120;
+      --card: #020617;
+      --card-border: rgba(148, 163, 184, 0.25);
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --accent-strong: #0ea5e9;
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --radius-xl: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
+      --max-width: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 16px;
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3, h4 {
-      margin-top: 1.4em;
+
+    .page {
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      display: flex;
+      justify-content: center;
     }
-    h1 {
-      font-size: 1.8rem;
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    h2 {
-      font-size: 1.4rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    h3 {
-      font-size: 1.15rem;
-      margin-top: 1.2em;
-    }
-    h4 {
-      font-size: 1.05rem;
-      margin-top: 1.1em;
-    }
-    a {
-      color: #0369a1;
+
+    .back-link {
+      font-size: 13px;
+      color: var(--text-dim);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    a:hover {
+
+    .back-link:hover {
+      color: var(--accent-strong);
       text-decoration: underline;
     }
-    small {
-      color: #666;
+
+    .app-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 4px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      width: fit-content;
+      font-size: 13px;
+      color: var(--text-muted);
     }
+
+    .app-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-soft);
+    }
+
+    h1 {
+      font-size: clamp(26px, 3.8vw, 32px);
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08) 0, rgba(15, 23, 42, 0.96) 45%, #020617 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 55%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
     .lang-label {
-      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      color: #555;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
     }
+
+    .lang-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-strong);
+    }
+
+    h2 {
+      margin: 18px 0 4px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      margin: 14px 0 4px;
+      font-size: 15px;
+    }
+
+    h4 {
+      margin: 10px 0 4px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    p {
+      margin: 4px 0 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    ul {
+      margin: 4px 0 10px 18px;
+      padding: 0;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    li { margin-bottom: 4px; }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    small {
+      color: var(--text-dim);
+      font-size: 12px;
+    }
+
+    .note-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .note-pill span.icon { font-size: 13px; }
   </style>
 </head>
 <body>
-  <p><a href="index.html">← Powrót / Back</a></p>
+<div class="page">
+  <main class="shell" aria-labelledby="page-title">
+    <header>
+      <a href="index.html" class="back-link">← Powrót / Back</a>
+      <div class="app-pill">
+        <span class="app-dot"></span>
+        <span>Airlytica · Terms / Regulamin</span>
+      </div>
+      <h1 id="page-title">Terms of Use for Airlytica</h1>
+      <div class="meta">
+        <strong>Effective date / Data obowiązywania: 01.12.2025</strong><br />
+        <small>This document is available in Polish and English. / Dokument dostępny jest w języku polskim i angielskim.</small>
+      </div>
+    </header>
 
-  <h1>Terms of Use for Airlytica</h1>
-  <p><strong>Effective date / Data obowiązywania: 01.12.2025</strong></p>
-  <p><small>This document is available in Polish and English. / Dokument dostępny jest w języku polskim i angielskim.</small></p>
+    <section class="card" aria-label="Terms of use content">
+      <div class="card-inner legal">
 
-  <!-- WERSJA POLSKA -->
-  <h2><span class="lang-label">PL</span> Regulamin korzystania z aplikacji Airlytica</h2>
+        <!-- PL VERSION -->
+        <div class="lang-label">
+          <span class="lang-dot"></span>
+          PL · Regulamin
+        </div>
 
-  <h3>1. Postanowienia ogólne</h3>
-  <p>
-    Niniejszy regulamin („Regulamin”) określa zasady korzystania z aplikacji mobilnej Airlytica („Aplikacja”)
-    działającej na urządzeniach z systemem iOS.
-  </p>
-  <p>
-    Administratorem i twórcą Aplikacji jest [Twoje imię i nazwisko / nazwa firmy, adres, kraj],
-    e-mail: <a href="mailto:petycja-bowiem.4n@icloud.com">petycja-bowiem.4n@icloud.com</a> („Twórca”).
-  </p>
-  <p>
-    Instalując i korzystając z Aplikacji, użytkownik („Użytkownik”) akceptuje postanowienia niniejszego Regulaminu.
-  </p>
+        <h2>Regulamin korzystania z aplikacji Airlytica</h2>
 
-  <h3>2. Opis i funkcje Aplikacji</h3>
-  <p>
-    Aplikacja służy do wygodnego sprawdzania jakości powietrza w wybranych lokalizacjach. Prezentuje aktualne i archiwalne
-    dane pomiarowe, udostępnia uproszczony indeks jakości powietrza oraz wykresy pokazujące zmiany stężeń zanieczyszczeń w czasie.
-  </p>
-  <p>
-    Celem Aplikacji jest ułatwienie codziennej oceny warunków do przebywania na zewnątrz, uprawiania sportu czy planowania innych aktywności.
-  </p>
-  <p>Aplikacja w szczególności:</p>
-  <ul>
-    <li>wyświetla dane o jakości powietrza dla wybranych stacji i lokalizacji,</li>
-    <li>prezentuje dane w formie map, wykresów, wskaźników oraz widżetów (w tym na ekranie głównym i ekranie blokady),</li>
-    <li>udostępnia dodatkowe funkcje w ramach wersji Premium.</li>
-  </ul>
-  <p>
-    Aplikacja może korzystać z lokalizacji urządzenia wyłącznie za zgodą Użytkownika – w celu np. pokazania przybliżonego położenia
-    Użytkownika lub ułatwienia wyboru stacji. Lokalizacja nie jest wymagana do korzystania z Aplikacji.
-  </p>
+        <h3>1. Postanowienia ogólne</h3>
+        <p>
+          Niniejszy regulamin („Regulamin”) określa zasady korzystania z aplikacji mobilnej Airlytica („Aplikacja”)
+          działającej na urządzeniach z systemem iOS.
+        </p>
+        <p>
+          Administratorem i twórcą Aplikacji jest [Twoje imię i nazwisko / nazwa firmy, adres, kraj],
+          e-mail: <a href="mailto:petycja-bowiem.4n@icloud.com">petycja-bowiem.4n@icloud.com</a> („Twórca”).
+        </p>
+        <p>
+          Instalując i korzystając z Aplikacji, użytkownik („Użytkownik”) akceptuje postanowienia niniejszego Regulaminu.
+        </p>
 
-  <h3>3. Źródła danych</h3>
-  <p>
-    Dane o jakości powietrza prezentowane w Aplikacji pochodzą w szczególności z:
-  </p>
-  <ul>
-    <li>portalu „Jakość Powietrza” Głównego Inspektoratu Ochrony Środowiska (GIOŚ),</li>
-    <li>usług API udostępnianych pod adresem powietrze.gios.gov.pl,</li>
-    <li>w przypadku wybranych funkcji Premium (ikony szkół na mapie) – z projektu ESA – Edukacyjna Sieć Antysmogowa
-      (np. dane z czujników zainstalowanych przy szkołach).</li>
-  </ul>
-  <p>
-    Źródło danych może być wskazywane w Aplikacji jako m.in. „GIOŚ – EKOINFONET”, „Dane gromadzone w systemie EKOINFONET GIOŚ”
-    lub jako dane udostępniane w ramach projektu ESA.
-  </p>
-  <p>
-    Dane obejmują w szczególności wyniki pomiarów z automatycznych i manualnych stacji pomiarowych oraz wskazania indeksu jakości powietrza,
-    udostępniane zgodnie z regulaminem portalu „Jakość Powietrza” i usług API GIOŚ, a w przypadku danych ESA – zgodnie z zasadami
-    udostępniania danych w ramach projektu Edukacyjna Sieć Antysmogowa.
-  </p>
-  <p>
-    Aplikacja stara się wskazywać datę i godzinę wytworzenia danych (moment pomiaru) oraz informować, czy prezentowane są dane bieżące czy archiwalne.
-  </p>
+        <h3>2. Opis i funkcje Aplikacji</h3>
+        <p>
+          Aplikacja służy do wygodnego sprawdzania jakości powietrza w wybranych lokalizacjach. Prezentuje aktualne i archiwalne
+          dane pomiarowe, udostępnia uproszczony indeks jakości powietrza oraz wykresy pokazujące zmiany stężeń zanieczyszczeń w czasie.
+        </p>
+        <p>
+          Celem Aplikacji jest ułatwienie codziennej oceny warunków do przebywania na zewnątrz, uprawiania sportu czy planowania innych aktywności.
+        </p>
+        <p>Aplikacja w szczególności:</p>
+        <ul>
+          <li>wyświetla dane o jakości powietrza dla wybranych stacji i lokalizacji,</li>
+          <li>prezentuje dane w formie map, wykresów, wskaźników oraz widżetów (w tym na ekranie głównym i ekranie blokady),</li>
+          <li>udostępnia dodatkowe funkcje w ramach wersji Premium.</li>
+        </ul>
+        <p>
+          Aplikacja może korzystać z lokalizacji urządzenia wyłącznie za zgodą Użytkownika – w celu np. pokazania przybliżonego położenia
+          Użytkownika lub ułatwienia wyboru stacji. Lokalizacja nie jest wymagana do korzystania z Aplikacji.
+        </p>
 
-  <h3>4. Przetwarzanie i prezentacja danych</h3>
-  <p>
-    Aplikacja pobiera dane o jakości powietrza z usług GIOŚ oraz – w przypadku funkcji Premium – z ESA, a następnie przetwarza je w szczególności poprzez:
-  </p>
-  <ul>
-    <li>agregowanie i uśrednianie wartości w różnych przedziałach czasowych,</li>
-    <li>przeliczanie danych na lokalny indeks jakości powietrza zastosowany w Aplikacji,</li>
-    <li>tworzenie wykresów, map, wizualizacji oraz dodatkowych wskaźników,</li>
-    <li>prezentowanie danych w innej formie niż ta bezpośrednio udostępniana w serwisie GIOŚ lub ESA.</li>
-  </ul>
-  <p>
-    Zgodnie z regulaminem GIOŚ, w przypadku przetworzenia informacji sektora publicznego Aplikacja informuje,
-    że dane zostały przetworzone lub zmienione – wszystkie obliczenia, wizualizacje i interpretacje stanowią przetworzoną
-    formę danych źródłowych GIOŚ oraz (dla użytkowników Premium) danych ESA.
-  </p>
-  <p>
-    Sposób prezentacji danych (np. kolory, opisy, indeksy) jest autorską interpretacją Twórcy i może różnić się od formy prezentacji
-    stosowanej przez GIOŚ lub ESA.
-  </p>
+        <h3>3. Źródła danych</h3>
+        <p>
+          Dane o jakości powietrza prezentowane w Aplikacji pochodzą w szczególności z:
+        </p>
+        <ul>
+          <li>portalu „Jakość Powietrza” Głównego Inspektoratu Ochrony Środowiska (GIOŚ),</li>
+          <li>usług API udostępnianych pod adresem powietrze.gios.gov.pl,</li>
+          <li>w przypadku wybranych funkcji Premium (ikony szkół na mapie) – z projektu ESA – Edukacyjna Sieć Antysmogowa
+            (np. dane z czujników zainstalowanych przy szkołach).</li>
+        </ul>
+        <p>
+          Źródło danych może być wskazywane w Aplikacji jako m.in. „GIOŚ – EKOINFONET”, „Dane gromadzone w systemie EKOINFONET GIOŚ”
+          lub jako dane udostępniane w ramach projektu ESA.
+        </p>
+        <p>
+          Dane obejmują w szczególności wyniki pomiarów z automatycznych i manualnych stacji pomiarowych oraz wskazania indeksu jakości powietrza,
+          udostępniane zgodnie z regulaminem portalu „Jakość Powietrza” i usług API GIOŚ, a w przypadku danych ESA – zgodnie z zasadami
+          udostępniania danych w ramach projektu Edukacyjna Sieć Antysmogowa.
+        </p>
+        <p>
+          Aplikacja stara się wskazywać datę i godzinę wytworzenia danych (moment pomiaru) oraz informować, czy prezentowane są dane bieżące czy archiwalne.
+        </p>
 
-  <h3>5. Charakter informacji</h3>
-  <p>
-    Informacje prezentowane w Aplikacji mają wyłącznie charakter informacyjny i poglądowy.
-  </p>
-  <p>
-    Dane i wizualizacje prezentowane w Aplikacji nie stanowią:
-  </p>
-  <ul>
-    <li>porady medycznej,</li>
-    <li>porady prawnej,</li>
-    <li>oficjalnej interpretacji organów administracji publicznej,</li>
-    <li>podstawy do podejmowania decyzji o charakterze prawnym lub administracyjnym.</li>
-  </ul>
-  <p>
-    Decyzje podejmowane na podstawie danych prezentowanych w Aplikacji Użytkownik podejmuje na własną odpowiedzialność.
-    Aplikacja nie zastępuje oficjalnych komunikatów ani zaleceń służb publicznych.
-  </p>
+        <h3>4. Przetwarzanie i prezentacja danych</h3>
+        <p>
+          Aplikacja pobiera dane o jakości powietrza z usług GIOŚ oraz – w przypadku funkcji Premium – z ESA, a następnie przetwarza je w szczególności poprzez:
+        </p>
+        <ul>
+          <li>agregowanie i uśrednianie wartości w różnych przedziałach czasowych,</li>
+          <li>przeliczanie danych na lokalny indeks jakości powietrza zastosowany w Aplikacji,</li>
+          <li>tworzenie wykresów, map, wizualizacji oraz dodatkowych wskaźników,</li>
+          <li>prezentowanie danych w innej formie niż ta bezpośrednio udostępniana w serwisie GIOŚ lub ESA.</li>
+        </ul>
+        <p>
+          Zgodnie z regulaminem GIOŚ, w przypadku przetworzenia informacji sektora publicznego Aplikacja informuje,
+          że dane zostały przetworzone lub zmienione – wszystkie obliczenia, wizualizacje i interpretacje stanowią przetworzoną
+          formę danych źródłowych GIOŚ oraz (dla użytkowników Premium) danych ESA.
+        </p>
+        <p>
+          Sposób prezentacji danych (np. kolory, opisy, indeksy) jest autorską interpretacją Twórcy i może różnić się od formy prezentacji
+          stosowanej przez GIOŚ lub ESA.
+        </p>
 
-  <h3>6. Odpowiedzialność</h3>
-  <p>
-    Główny Inspektorat Ochrony Środowiska, zgodnie z regulaminem portalu „Jakość Powietrza”, nie ponosi odpowiedzialności za treść
-    informacji sektora publicznego po ich przetworzeniu przez użytkowników ponownie wykorzystujących te informacje, w tym przez niniejszą Aplikację.
-  </p>
-  <p>
-    Powyższe obejmuje w szczególności wszelkie przeliczenia, klasyfikacje, interpretacje oraz wizualizacje danych dokonane w Aplikacji.
-  </p>
-  <p>
-    Analogicznie, podmioty odpowiedzialne za dane udostępniane w ramach projektu ESA – Edukacyjna Sieć Antysmogowa nie ponoszą odpowiedzialności
-    za sposób ich dalszego przetwarzania, interpretowania i prezentowania w Aplikacji.
-  </p>
-  <p>
-    Twórca dokłada starań, aby dane były prezentowane w sposób poprawny i aktualny, jednak:
-  </p>
-  <ul>
-    <li>nie gwarantuje kompletności, poprawności ani ciągłej dostępności danych,</li>
-    <li>nie ponosi odpowiedzialności za ewentualne błędy w danych źródłowych pochodzących z GIOŚ lub ESA,</li>
-    <li>nie ponosi odpowiedzialności za skutki decyzji podjętych na podstawie informacji prezentowanych w Aplikacji,
-      w tym za jakiekolwiek szkody bezpośrednie lub pośrednie wynikające z korzystania z Aplikacji.</li>
-  </ul>
+        <h3>5. Charakter informacji</h3>
+        <p>
+          Informacje prezentowane w Aplikacji mają wyłącznie charakter informacyjny i poglądowy.
+        </p>
+        <p>
+          Dane i wizualizacje prezentowane w Aplikacji nie stanowią:
+        </p>
+        <ul>
+          <li>porady medycznej,</li>
+          <li>porady prawnej,</li>
+          <li>oficjalnej interpretacji organów administracji publicznej,</li>
+          <li>podstawy do podejmowania decyzji o charakterze prawnym lub administracyjnym.</li>
+        </ul>
+        <p>
+          Decyzje podejmowane na podstawie danych prezentowanych w Aplikacji Użytkownik podejmuje na własną odpowiedzialność.
+          Aplikacja nie zastępuje oficjalnych komunikatów ani zaleceń służb publicznych.
+        </p>
 
-  <h3>7. Częstotliwość pobierania danych</h3>
-  <p>
-    Dane z usług API GIOŚ są pobierane z zachowaniem ograniczeń określonych w regulaminie tych usług, w szczególności dotyczących
-    maksymalnej częstotliwości zapytań, tak aby nie powodować nadmiernego obciążenia systemów GIOŚ.
-  </p>
-  <p>
-    W przypadku danych ESA częstotliwość odświeżania jest dostosowana do zasad udostępniania danych i możliwości infrastruktury
-    projektu Edukacyjna Sieć Antysmogowa.
-  </p>
-  <p>
-    Częstotliwość odświeżania danych prezentowanych w Aplikacji (w tym widżetów) może być również ograniczona przez system iOS,
-    ustawienia urządzenia oraz dostępność usług zewnętrznych.
-  </p>
+        <h3>6. Odpowiedzialność</h3>
+        <p>
+          Główny Inspektorat Ochrony Środowiska, zgodnie z regulaminem portalu „Jakość Powietrza”, nie ponosi odpowiedzialności za treść
+          informacji sektora publicznego po ich przetworzeniu przez użytkowników ponownie wykorzystujących te informacje, w tym przez niniejszą Aplikację.
+        </p>
+        <p>
+          Powyższe obejmuje w szczególności wszelkie przeliczenia, klasyfikacje, interpretacje oraz wizualizacje danych dokonane w Aplikacji.
+        </p>
+        <p>
+          Analogicznie, podmioty odpowiedzialne za dane udostępniane w ramach projektu ESA – Edukacyjna Sieć Antysmogowa nie ponoszą odpowiedzialności
+          za sposób ich dalszego przetwarzania, interpretowania i prezentowania w Aplikacji.
+        </p>
+        <p>
+          Twórca dokłada starań, aby dane były prezentowane w sposób poprawny i aktualny, jednak:
+        </p>
+        <ul>
+          <li>nie gwarantuje kompletności, poprawności ani ciągłej dostępności danych,</li>
+          <li>nie ponosi odpowiedzialności za ewentualne błędy w danych źródłowych pochodzących z GIOŚ lub ESA,</li>
+          <li>nie ponosi odpowiedzialności za skutki decyzji podjętych na podstawie informacji prezentowanych w Aplikacji,
+            w tym za jakiekolwiek szkody bezpośrednie lub pośrednie wynikające z korzystania z Aplikacji.</li>
+        </ul>
 
-  <h3>8. Widżety i wersja Premium</h3>
-  <p>
-    Wybrane funkcje Aplikacji, w szczególności widżety, są dostępne wyłącznie dla użytkowników wersji Premium.
-  </p>
-  <p>
-    Aplikacja oferuje trzy rozmiary widżetów: Small, Medium i Large, które wyświetlają informacje o jakości powietrza dla wybranej stacji.
-  </p>
-  <p>
-    Widżety prezentują poziom zanieczyszczeń uporządkowanych od „najgorszych” do „najlepszych” wartości dla monitorowanych parametrów,
-    co pozwala szybko ocenić, które zanieczyszczenia najbardziej pogarszają jakość powietrza.
-  </p>
-  <p>
-    W wersji Premium dostępne są także widżety na ekranie blokady. Dane w widżetach odświeżają się automatycznie
-    (co do zasady w cyklu godzinowym), zgodnie z ograniczeniami i harmonogramem systemu iOS oraz zasadami działania usług API.
-  </p>
+        <h3>7. Częstotliwość pobierania danych</h3>
+        <p>
+          Dane z usług API GIOŚ są pobierane z zachowaniem ograniczeń określonych w regulaminie tych usług, w szczególności dotyczących
+          maksymalnej częstotliwości zapytań, tak aby nie powodować nadmiernego obciążenia systemów GIOŚ.
+        </p>
+        <p>
+          W przypadku danych ESA częstotliwość odświeżania jest dostosowana do zasad udostępniania danych i możliwości infrastruktury
+          projektu Edukacyjna Sieć Antysmogowa.
+        </p>
+        <p>
+          Częstotliwość odświeżania danych prezentowanych w Aplikacji (w tym widżetów) może być również ograniczona przez system iOS,
+          ustawienia urządzenia oraz dostępność usług zewnętrznych.
+        </p>
 
-  <h3>9. Ceny i subskrypcje</h3>
-  <p>
-    Zakupy w Aplikacji (subskrypcje oraz dostęp w modelu „lifetime”) realizowane są za pośrednictwem App Store
-    i podlegają regulaminowi Apple Media Services.
-  </p>
-  <p>
-    Aktualne ceny subskrypcji oraz dostępu „lifetime” są zawsze prezentowane w Aplikacji (lub w App Store) przed potwierdzeniem zakupu.
-    Ceny mogą różnić się w zależności od kraju i waluty i mogą ulegać zmianie w przyszłości.
-  </p>
-  <p>
-    Zmiana ceny nie wpływa na już opłacone okresy subskrypcji – obowiązują one do końca bieżącego okresu rozliczeniowego.
-  </p>
-  <p>
-    W przypadku zmiany cen przyszłych odnowień subskrypcji Użytkownik może zostać o tym poinformowany z wyprzedzeniem
-    i ma możliwość rezygnacji z odnowienia przed naliczeniem nowej opłaty, zgodnie z zasadami App Store.
-  </p>
-  <p>
-    Subskrypcje odnawiają się automatycznie, chyba że Użytkownik anuluje odnowienie w ustawieniach swojego konta Apple ID
-    co najmniej 24 godziny przed końcem bieżącego okresu.
-  </p>
-  <p>
-    Dostęp „lifetime” oznacza dostęp do odblokowanych funkcji Aplikacji przez czas nieokreślony, przy czym:
-  </p>
-  <ul>
-    <li>nie oznacza to gwarancji utrzymywania Aplikacji lub jej funkcji w niezmienionej formie przez nieograniczony czas,</li>
-    <li>Twórca może w przyszłości zakończyć rozwój lub wsparcie Aplikacji (np. w razie wycofania z App Store,
-      zmian technicznych lub prawnych).</li>
-  </ul>
-  <p>
-    Zwroty płatności są realizowane zgodnie z zasadami Apple. Co do zasady Twórca nie rozpatruje reklamacji płatniczych
-    poza systemem App Store.
-  </p>
-  <p>
-    Zakup licencji dożywotniej (jednorazowej) nie powoduje automatycznego anulowania aktywnej subskrypcji.
-    Jeśli nie chcesz już otrzymywać rachunków za subskrypcję, musisz ją samodzielnie anulować w ustawieniach konta Apple ID.
-  </p>
+        <h3>8. Widżety i wersja Premium</h3>
+        <p>
+          Wybrane funkcje Aplikacji, w szczególności widżety, są dostępne wyłącznie dla użytkowników wersji Premium.
+        </p>
+        <p>
+          Aplikacja oferuje trzy rozmiary widżetów: Small, Medium i Large, które wyświetlają informacje o jakości powietrza dla wybranej stacji.
+        </p>
+        <p>
+          Widżety prezentują poziom zanieczyszczeń uporządkowanych od „najgorszych” do „najlepszych” wartości dla monitorowanych parametrów,
+          co pozwala szybko ocenić, które zanieczyszczenia najbardziej pogarszają jakość powietrza.
+        </p>
+        <p>
+          W wersji Premium dostępne są także widżety na ekranie blokady. Dane w widżetach odświeżają się automatycznie
+          (co do zasady w cyklu godzinowym), zgodnie z ograniczeniami i harmonogramem systemu iOS oraz zasadami działania usług API.
+        </p>
 
-  <h3>10. Wymagania techniczne i zasady korzystania</h3>
-  <p>Do korzystania z Aplikacji wymagane jest:</p>
-  <ul>
-    <li>urządzenie z systemem iOS w wersji zgodnej z informacją w App Store,</li>
-    <li>dostęp do Internetu,</li>
-    <li>aktywne konto Apple ID.</li>
-  </ul>
-  <p>
-    Użytkownik zobowiązany jest korzystać z Aplikacji w sposób zgodny z prawem, niniejszym Regulaminem oraz dobrymi obyczajami.
-  </p>
-  <p>Zabronione jest w szczególności:</p>
-  <ul>
-    <li>podejmowanie prób nieuprawnionej ingerencji w działanie Aplikacji,</li>
-    <li>dekompilacja, odtwarzanie kodu źródłowego, modyfikowanie lub rozpowszechnianie Aplikacji
-      w sposób wykraczający poza uprawnienia wynikające z licencji Apple,</li>
-    <li>wykorzystywanie Aplikacji w sposób mogący zakłócić działanie usług GIOŚ, ESA lub innych zewnętrznych dostawców danych.</li>
-  </ul>
+        <h3>9. Ceny i subskrypcje</h3>
+        <p>
+          Zakupy w Aplikacji (subskrypcje oraz dostęp w modelu „lifetime”) realizowane są za pośrednictwem App Store
+          i podlegają regulaminowi Apple Media Services.
+        </p>
+        <p>
+          Aktualne ceny subskrypcji oraz dostępu „lifetime” są zawsze prezentowane w Aplikacji (lub w App Store) przed potwierdzeniem zakupu.
+          Ceny mogą różnić się w zależności od kraju i waluty i mogą ulegać zmianie w przyszłości.
+        </p>
+        <p>
+          Zmiana ceny nie wpływa na już opłacone okresy subskrypcji – obowiązują one do końca bieżącego okresu rozliczeniowego.
+        </p>
+        <p>
+          W przypadku zmiany cen przyszłych odnowień subskrypcji Użytkownik może zostać o tym poinformowany z wyprzedzeniem
+          i ma możliwość rezygnacji z odnowienia przed naliczeniem nowej opłaty, zgodnie z zasadami App Store.
+        </p>
+        <p>
+          Subskrypcje odnawiają się automatycznie, chyba że Użytkownik anuluje odnowienie w ustawieniach swojego konta Apple ID
+          co najmniej 24 godziny przed końcem bieżącego okresu.
+        </p>
+        <p>
+          Dostęp „lifetime” oznacza dostęp do odblokowanych funkcji Aplikacji przez czas nieokreślony, przy czym:
+        </p>
+        <ul>
+          <li>nie oznacza to gwarancji utrzymywania Aplikacji lub jej funkcji w niezmienionej formie przez nieograniczony czas,</li>
+          <li>Twórca może w przyszłości zakończyć rozwój lub wsparcie Aplikacji (np. w razie wycofania z App Store,
+            zmian technicznych lub prawnych).</li>
+        </ul>
+        <p>
+          Zwroty płatności są realizowane zgodnie z zasadami Apple. Co do zasady Twórca nie rozpatruje reklamacji płatniczych
+          poza systemem App Store.
+        </p>
+        <p>
+          Zakup licencji dożywotniej (jednorazowej) nie powoduje automatycznego anulowania aktywnej subskrypcji.
+          Jeśli nie chcesz już otrzymywać rachunków za subskrypcję, musisz ją samodzielnie anulować w ustawieniach konta Apple ID.
+        </p>
 
-  <h3>11. Prawa własności intelektualnej</h3>
-  <p>
-    Aplikacja oraz wszelkie jej elementy (w szczególności kod źródłowy, interfejs, grafiki, logo, nazwa, opisy)
-    są chronione prawem autorskim lub innymi prawami własności intelektualnej i przysługują Twórcy lub innym uprawnionym podmiotom.
-  </p>
-  <p>
-    Użytkownik otrzymuje niewyłączną, niezbywalną licencję na korzystanie z Aplikacji wyłącznie na warunkach określonych
-    w regulaminie Apple Media Services oraz niniejszym Regulaminie, na własny użytek, na urządzeniach powiązanych z jego kontem Apple ID.
-  </p>
-  <p>Bez uprzedniej pisemnej zgody Twórcy zabronione jest w szczególności:</p>
-  <ul>
-    <li>kopiowanie, modyfikowanie, rozpowszechnianie lub publiczne udostępnianie Aplikacji lub jej części
-      (poza zakresem dozwolonego użytku),</li>
-    <li>używanie oznaczeń Aplikacji (np. nazw, logo) w sposób mogący wprowadzać w błąd co do twórcy lub charakteru usługi.</li>
-  </ul>
+        <h3>10. Wymagania techniczne i zasady korzystania</h3>
+        <p>Do korzystania z Aplikacji wymagane jest:</p>
+        <ul>
+          <li>urządzenie z systemem iOS w wersji zgodnej z informacją w App Store,</li>
+          <li>dostęp do Internetu,</li>
+          <li>aktywne konto Apple ID.</li>
+        </ul>
+        <p>
+          Użytkownik zobowiązany jest korzystać z Aplikacji w sposób zgodny z prawem, niniejszym Regulaminem oraz dobrymi obyczajami.
+        </p>
+        <p>Zabronione jest w szczególności:</p>
+        <ul>
+          <li>podejmowanie prób nieuprawnionej ingerencji w działanie Aplikacji,</li>
+          <li>dekompilacja, odtwarzanie kodu źródłowego, modyfikowanie lub rozpowszechnianie Aplikacji
+            w sposób wykraczający poza uprawnienia wynikające z licencji Apple,</li>
+          <li>wykorzystywanie Aplikacji w sposób mogący zakłócić działanie usług GIOŚ, ESA lub innych zewnętrznych dostawców danych.</li>
+        </ul>
 
-  <h3>12. Rozwiązanie umowy i usunięcie Aplikacji</h3>
-  <p>
-    Użytkownik może w każdej chwili zakończyć korzystanie z Aplikacji poprzez jej odinstalowanie z urządzenia.
-  </p>
-  <p>
-    Usunięcie Aplikacji z urządzenia nie powoduje automatycznego anulowania aktywnych subskrypcji – należy to zrobić
-    w ustawieniach konta Apple ID.
-  </p>
-  <p>
-    Twórca może w szczególnych przypadkach zakończyć udostępnianie Aplikacji w App Store lub zaprzestać jej rozwoju,
-    w szczególności z powodów technicznych, biznesowych lub prawnych.
-  </p>
-  <p>
-    Zakończenie udostępniania Aplikacji w App Store nie wpływa na dotychczasową ważność zakupów dokonanych zgodnie z warunkami Apple,
-    jednak może oznaczać brak dalszych aktualizacji, wsparcia lub kompatybilności z nowszymi wersjami systemu iOS.
-  </p>
+        <h3>11. Prawa własności intelektualnej</h3>
+        <p>
+          Aplikacja oraz wszelkie jej elementy (w szczególności kod źródłowy, interfejs, grafiki, logo, nazwa, opisy)
+          są chronione prawem autorskim lub innymi prawami własności intelektualnej i przysługują Twórcy lub innym uprawnionym podmiotom.
+        </p>
+        <p>
+          Użytkownik otrzymuje niewyłączną, niezbywalną licencję na korzystanie z Aplikacji wyłącznie na warunkach określonych
+          w regulaminie Apple Media Services oraz niniejszym Regulaminie, na własny użytek, na urządzeniach powiązanych z jego kontem Apple ID.
+        </p>
+        <p>Bez uprzedniej pisemnej zgody Twórcy zabronione jest w szczególności:</p>
+        <ul>
+          <li>kopiowanie, modyfikowanie, rozpowszechnianie lub publiczne udostępnianie Aplikacji lub jej części
+            (poza zakresem dozwolonego użytku),</li>
+          <li>używanie oznaczeń Aplikacji (np. nazw, logo) w sposób mogący wprowadzać w błąd co do twórcy lub charakteru usługi.</li>
+        </ul>
 
-  <h3>13. Zmiany Regulaminu</h3>
-  <p>
-    Twórca może zmienić niniejszy Regulamin, w szczególności w przypadku:
-  </p>
-  <ul>
-    <li>zmian funkcjonalności Aplikacji,</li>
-    <li>zmian modelu płatności,</li>
-    <li>zmian przepisów prawa lub wymogów regulacyjnych,</li>
-    <li>zmian po stronie dostawców danych (np. GIOŚ, ESA).</li>
-  </ul>
-  <p>
-    Zmieniony Regulamin będzie udostępniony w Aplikacji lub pod wskazanym adresem internetowym.
-    Dalsze korzystanie z Aplikacji po wejściu w życie zmian oznacza akceptację nowej treści Regulaminu.
-  </p>
+        <h3>12. Rozwiązanie umowy i usunięcie Aplikacji</h3>
+        <p>
+          Użytkownik może w każdej chwili zakończyć korzystanie z Aplikacji poprzez jej odinstalowanie z urządzenia.
+        </p>
+        <p>
+          Usunięcie Aplikacji z urządzenia nie powoduje automatycznego anulowania aktywnych subskrypcji – należy to zrobić
+          w ustawieniach konta Apple ID.
+        </p>
+        <p>
+          Twórca może w szczególnych przypadkach zakończyć udostępnianie Aplikacji w App Store lub zaprzestać jej rozwoju,
+          w szczególności z powodów technicznych, biznesowych lub prawnych.
+        </p>
+        <p>
+          Zakończenie udostępniania Aplikacji w App Store nie wpływa na dotychczasową ważność zakupów dokonanych zgodnie z warunkami Apple,
+          jednak może oznaczać brak dalszych aktualizacji, wsparcia lub kompatybilności z nowszymi wersjami systemu iOS.
+        </p>
 
-  <!-- ENGLISH VERSION -->
-  <h2><span class="lang-label">EN</span> Terms of Use for Airlytica</h2>
+        <h3>13. Zmiany Regulaminu</h3>
+        <p>
+          Twórca może zmienić niniejszy Regulamin, w szczególności w przypadku:
+        </p>
+        <ul>
+          <li>zmian funkcjonalności Aplikacji,</li>
+          <li>zmian modelu płatności,</li>
+          <li>zmian przepisów prawa lub wymogów regulacyjnych,</li>
+          <li>zmian po stronie dostawców danych (np. GIOŚ, ESA).</li>
+        </ul>
+        <p>
+          Zmieniony Regulamin będzie udostępniony w Aplikacji lub pod wskazanym adresem internetowym.
+          Dalsze korzystanie z Aplikacji po wejściu w życie zmian oznacza akceptację nowej treści Regulaminu.
+        </p>
 
-  <h3>1. General provisions</h3>
-  <p>
-    These Terms of Use (“Terms”) govern the use of the Airlytica mobile application (the “App”) for iOS devices.
-  </p>
-  <p>
-    The App is provided by [Your name / company name, address, country],
-    e-mail: <a href="mailto:petycja-bowiem.4n@icloud.com">petycja-bowiem.4n@icloud.com</a> (the “Developer”).
-  </p>
-  <p>
-    By installing and using the App, you (“User”) agree to be bound by these Terms.
-  </p>
+        <div class="note-pill">
+          <span class="icon">ℹ️</span>
+          <span>W razie pytań dotyczących Regulaminu możesz napisać na adres e-mail wsparcia.</span>
+        </div>
 
-  <h3>2. Description and features of the App</h3>
-  <p>
-    The App is designed to make it easy to check air quality in selected locations. It displays current and historical
-    measurement data, provides a simplified air quality index, and shows charts of how pollutant levels change over time.
-  </p>
-  <p>
-    The purpose of the App is to help you assess daily conditions for staying outdoors, doing sports, and planning other activities.
-  </p>
-  <p>In particular, the App:</p>
-  <ul>
-    <li>displays air quality data for selected locations and monitoring stations,</li>
-    <li>presents data using maps, charts, indicators and widgets (including Home Screen and Lock Screen widgets),</li>
-    <li>offers additional features as part of the Premium version.</li>
-  </ul>
-  <p>
-    The App may use your device’s location only with your explicit consent, for example to show your approximate position
-    or to help you choose a nearby station. Location is not required to use the App.
-  </p>
+        <!-- EN VERSION -->
+        <div style="margin-top: 26px;" class="lang-label">
+          <span class="lang-dot"></span>
+          EN · Terms of Use
+        </div>
 
-  <h3>3. Data sources</h3>
-  <p>
-    Air quality data displayed in the App is obtained in particular from:
-  </p>
-  <ul>
-    <li>the “Jakość Powietrza” (“Air Quality”) portal of the Chief Inspectorate of Environmental Protection in Poland (GIOŚ),</li>
-    <li>APIs made available at powietrze.gios.gov.pl,</li>
-    <li>for certain Premium features (e.g. school icons on the map) – from the ESA – Educational Anti-Smog Network project
-      (for example, data from sensors installed near schools).</li>
-  </ul>
-  <p>
-    In the App, the source may be indicated as, for example, “GIOŚ – EKOINFONET”, “Data collected in the EKOINFONET GIOŚ system”,
-    or as data provided under the ESA project.
-  </p>
-  <p>
-    The data includes, among others, measurements from automatic and manual monitoring stations and air quality indices,
-    shared in accordance with the rules of the “Air Quality” portal and GIOŚ APIs, and for ESA data – in line with
-    the ESA project’s data sharing rules.
-  </p>
-  <p>
-    Where possible, the App indicates the time the data was produced (measurement time) and whether the data shown is current or historical.
-  </p>
+        <h2>Terms of Use for Airlytica</h2>
 
-  <h3>4. Processing and presentation of data</h3>
-  <p>
-    The App retrieves air quality data from GIOŚ services and – for Premium features – from ESA, and then processes it in particular by:
-  </p>
-  <ul>
-    <li>aggregating and averaging values over different time ranges,</li>
-    <li>converting the data into a local air quality index used in the App,</li>
-    <li>generating charts, maps, visualisations and additional indicators,</li>
-    <li>presenting the data in a form different from that directly available via GIOŚ or ESA services.</li>
-  </ul>
-  <p>
-    In line with GIOŚ rules on the reuse of public sector information, the App explicitly informs that the data has been processed
-    or modified – all calculations, visualisations and interpretations in the App are a processed form of the original GIOŚ data and,
-    for Premium users, ESA data.
-  </p>
-  <p>
-    The way the data is presented (including colours, labels, indices) is the Developer’s own interpretation and may differ
-    from the presentation used by GIOŚ or ESA.
-  </p>
+        <h3>1. General provisions</h3>
+        <p>
+          These Terms of Use (“Terms”) govern the use of the Airlytica mobile application (the “App”) for iOS devices.
+        </p>
+        <p>
+          The App is provided by [Your name / company name, address, country],
+          e-mail: <a href="mailto:petycja-bowiem.4n@icloud.com">petycja-bowiem.4n@icloud.com</a> (the “Developer”).
+        </p>
+        <p>
+          By installing and using the App, you (“User”) agree to be bound by these Terms.
+        </p>
 
-  <h3>5. Nature of the information</h3>
-  <p>
-    All information shown in the App is provided for information and illustration purposes only.
-  </p>
-  <p>
-    The data and visualisations displayed in the App do not constitute:
-  </p>
-  <ul>
-    <li>medical advice,</li>
-    <li>legal advice,</li>
-    <li>an official interpretation by public authorities,</li>
-    <li>a binding basis for legal or administrative decisions.</li>
-  </ul>
-  <p>
-    Any decisions you make based on the information provided by the App are made at your own risk.
-    The App does not replace official announcements, warnings or recommendations issued by public authorities or relevant services.
-  </p>
+        <h3>2. Description and features of the App</h3>
+        <p>
+          The App is designed to make it easy to check air quality in selected locations. It displays current and historical
+          measurement data, provides a simplified air quality index, and shows charts of how pollutant levels change over time.
+        </p>
+        <p>
+          The purpose of the App is to help you assess daily conditions for staying outdoors, doing sports, and planning other activities.
+        </p>
+        <p>In particular, the App:</p>
+        <ul>
+          <li>displays air quality data for selected locations and monitoring stations,</li>
+          <li>presents data using maps, charts, indicators and widgets (including Home Screen and Lock Screen widgets),</li>
+          <li>offers additional features as part of the Premium version.</li>
+        </ul>
+        <p>
+          The App may use your device’s location only with your explicit consent, for example to show your approximate position
+          or to help you choose a nearby station. Location is not required to use the App.
+        </p>
 
-  <h3>6. Liability</h3>
-  <p>
-    According to the rules of the “Air Quality” portal, GIOŚ is not responsible for the content of public sector information
-    after it has been processed by users who reuse that information, including this App.
-  </p>
-  <p>
-    This applies in particular to all recalculations, classifications, interpretations and visualisations of the data carried out by the App.
-  </p>
-  <p>
-    Similarly, the entities responsible for data made available under the ESA – Educational Anti-Smog Network project
-    are not liable for the way such data is further processed, interpreted and presented in the App.
-  </p>
-  <p>
-    The Developer makes reasonable efforts to ensure that the data is accurate and up to date, but:
-  </p>
-  <ul>
-    <li>does not guarantee completeness, correctness or continuous availability of the data,</li>
-    <li>is not liable for any errors in the source data provided by GIOŚ or ESA,</li>
-    <li>is not liable for any consequences of decisions made based on the information displayed in the App,
-      including any direct or indirect damages resulting from the use of the App.</li>
-  </ul>
+        <h3>3. Data sources</h3>
+        <p>
+          Air quality data displayed in the App is obtained in particular from:
+        </p>
+        <ul>
+          <li>the “Jakość Powietrza” (“Air Quality”) portal of the Chief Inspectorate of Environmental Protection in Poland (GIOŚ),</li>
+          <li>APIs made available at powietrze.gios.gov.pl,</li>
+          <li>for certain Premium features (e.g. school icons on the map) – from the ESA – Educational Anti-Smog Network project
+            (for example, data from sensors installed near schools).</li>
+        </ul>
+        <p>
+          In the App, the source may be indicated as, for example, “GIOŚ – EKOINFONET”, “Data collected in the EKOINFONET GIOŚ system”,
+          or as data provided under the ESA project.
+        </p>
+        <p>
+          The data includes, among others, measurements from automatic and manual monitoring stations and air quality indices,
+          shared in accordance with the rules of the “Air Quality” portal and GIOŚ APIs, and for ESA data – in line with
+          the ESA project’s data sharing rules.
+        </p>
+        <p>
+          Where possible, the App indicates the time the data was produced (measurement time) and whether the data shown is current or historical.
+        </p>
 
-  <h3>7. Data refresh frequency</h3>
-  <p>
-    Data from GIOŚ APIs is retrieved in accordance with the technical and usage limits set by GIOŚ
-    (including maximum request frequency), in order not to overload GIOŚ systems.
-  </p>
-  <p>
-    For ESA data, the refresh frequency is adjusted to the project’s data sharing rules and technical capabilities.
-  </p>
-  <p>
-    The effective refresh rate of data shown in the App (including widgets) may also be limited by iOS system behaviour,
-    device settings and the availability of external services.
-  </p>
+        <h3>4. Processing and presentation of data</h3>
+        <p>
+          The App retrieves air quality data from GIOŚ services and – for Premium features – from ESA, and then processes it in particular by:
+        </p>
+        <ul>
+          <li>aggregating and averaging values over different time ranges,</li>
+          <li>converting the data into a local air quality index used in the App,</li>
+          <li>generating charts, maps, visualisations and additional indicators,</li>
+          <li>presenting the data in a form different from that directly available via GIOŚ or ESA services.</li>
+        </ul>
+        <p>
+          In line with GIOŚ rules on the reuse of public sector information, the App explicitly informs that the data has been processed
+          or modified – all calculations, visualisations and interpretations in the App are a processed form of the original GIOŚ data and,
+          for Premium users, ESA data.
+        </p>
+        <p>
+          The way the data is presented (including colours, labels, indices) is the Developer’s own interpretation and may differ
+          from the presentation used by GIOŚ or ESA.
+        </p>
 
-  <h3>8. Widgets and Premium version</h3>
-  <p>
-    Certain features of the App, in particular widgets, are available only to Premium users.
-  </p>
-  <p>
-    The App offers three widget sizes: Small, Medium and Large, which display air quality information for a selected station.
-  </p>
-  <p>
-    Widgets present pollutant levels sorted from “worst” to “best” values for monitored parameters,
-    so you can quickly see which pollutants have the strongest negative impact on air quality.
-  </p>
-  <p>
-    In the Premium version, Lock Screen widgets are also available. Widget data is refreshed automatically
-    (typically on an hourly basis), subject to iOS refresh policies, system limitations and the behaviour of external APIs.
-  </p>
+        <h3>5. Nature of the information</h3>
+        <p>
+          All information shown in the App is provided for information and illustration purposes only.
+        </p>
+        <p>
+          The data and visualisations displayed in the App do not constitute:
+        </p>
+        <ul>
+          <li>medical advice,</li>
+          <li>legal advice,</li>
+          <li>an official interpretation by public authorities,</li>
+          <li>a binding basis for legal or administrative decisions.</li>
+        </ul>
+        <p>
+          Any decisions you make based on the information provided by the App are made at your own risk.
+          The App does not replace official announcements, warnings or recommendations issued by public authorities or relevant services.
+        </p>
 
-  <h3>9. Prices and subscriptions</h3>
-  <p>
-    In-app purchases (subscriptions and lifetime access) are processed via the App Store and are governed by Apple’s terms
-    and the Apple Media Services agreement.
-  </p>
-  <p>
-    The current prices of subscriptions and lifetime access are always shown in the App (or in the App Store)
-    before you confirm a purchase. Prices may vary by country and currency and may change in the future.
-  </p>
-  <p>
-    Changes in price do not affect periods that have already been paid for – they remain valid until the end
-    of the current billing period.
-  </p>
-  <p>
-    Purchasing a lifetime (one-time) license does not automatically cancel any active subscription.
-    If you no longer wish to be billed for a subscription, you must cancel it yourself in your Apple ID account settings.
-  </p>
-  <p>
-    If the price of future subscription renewals changes, you may be notified in advance and will have the option
-    to cancel renewal before the new price is charged, in accordance with App Store rules.
-  </p>
-  <p>
-    Subscriptions renew automatically unless you cancel renewal in your Apple ID account settings at least 24 hours
-    before the end of the current billing period.
-  </p>
-  <p>
-    “Lifetime” access means access to the unlocked features of the App for an indefinite period of time; however:
-  </p>
-  <ul>
-    <li>it does not guarantee that the App or its features will remain available or unchanged forever,</li>
-    <li>the Developer may in the future decide to discontinue or remove the App from the App Store
-      (for example, for technical, legal or business reasons).</li>
-  </ul>
-  <p>
-    Refunds for in-app purchases are handled in accordance with Apple’s policies.
-    As a general rule, the Developer does not process payment-related claims outside the App Store system.
-  </p>
+        <h3>6. Liability</h3>
+        <p>
+          According to the rules of the “Air Quality” portal, GIOŚ is not responsible for the content of public sector information
+          after it has been processed by users who reuse that information, including this App.
+        </p>
+        <p>
+          This applies in particular to all recalculations, classifications, interpretations and visualisations of the data carried out by the App.
+        </p>
+        <p>
+          Similarly, the entities responsible for data made available under the ESA – Educational Anti-Smog Network project
+          are not liable for the way such data is further processed, interpreted and presented in the App.
+        </p>
+        <p>
+          The Developer makes reasonable efforts to ensure that the data is accurate and up to date, but:
+        </p>
+        <ul>
+          <li>does not guarantee completeness, correctness or continuous availability of the data,</li>
+          <li>is not liable for any errors in the source data provided by GIOŚ or ESA,</li>
+          <li>is not liable for any consequences of decisions made based on the information displayed in the App,
+            including any direct or indirect damages resulting from the use of the App.</li>
+        </ul>
 
-  <h3>10. Technical requirements and acceptable use</h3>
-  <p>To use the App, you need:</p>
-  <ul>
-    <li>a compatible iOS device and system version as specified in the App Store,</li>
-    <li>an Internet connection,</li>
-    <li>an active Apple ID account.</li>
-  </ul>
-  <p>
-    You must use the App in accordance with applicable law, these Terms and good practice.
-  </p>
-  <p>In particular, you must not:</p>
-  <ul>
-    <li>attempt to interfere with or disrupt the App or the servers and networks used by the App,</li>
-    <li>decompile, reverse engineer, modify or distribute the App beyond what is permitted under Apple’s license terms,</li>
-    <li>use the App in a way that may overload or disrupt services provided by GIOŚ, ESA or other data providers.</li>
-  </ul>
+        <h3>7. Data refresh frequency</h3>
+        <p>
+          Data from GIOŚ APIs is retrieved in accordance with the technical and usage limits set by GIOŚ
+          (including maximum request frequency), in order not to overload GIOŚ systems.
+        </p>
+        <p>
+          For ESA data, the refresh frequency is adjusted to the project’s data sharing rules and technical capabilities.
+        </p>
+        <p>
+          The effective refresh rate of data shown in the App (including widgets) may also be limited by iOS system behaviour,
+          device settings and the availability of external services.
+        </p>
 
-  <h3>11. Intellectual property</h3>
-  <p>
-    The App and all of its elements (including the source code, interface, graphics, logo, name and textual content)
-    are protected by copyright and other intellectual property rights and belong to the Developer or other respective rights holders.
-  </p>
-  <p>
-    You are granted a non-exclusive, non-transferable license to use the App only as permitted under Apple’s terms and these Terms,
-    for your personal use, on devices linked to your Apple ID account.
-  </p>
-  <p>Without the Developer’s prior written consent, you may not:</p>
-  <ul>
-    <li>copy, modify, distribute or publicly display the App or any part of it beyond what is allowed by applicable law,</li>
-    <li>use the App’s name, logo or other designations in a way that may mislead others as to the Developer or the nature of the service.</li>
-  </ul>
+        <h3>8. Widgets and Premium version</h3>
+        <p>
+          Certain features of the App, in particular widgets, are available only to Premium users.
+        </p>
+        <p>
+          The App offers three widget sizes: Small, Medium and Large, which display air quality information for a selected station.
+        </p>
+        <p>
+          Widgets present pollutant levels sorted from “worst” to “best” values for monitored parameters,
+          so you can quickly see which pollutants have the strongest negative impact on air quality.
+        </p>
+        <p>
+          In the Premium version, Lock Screen widgets are also available. Widget data is refreshed automatically
+          (typically on an hourly basis), subject to iOS refresh policies, system limitations and the behaviour of external APIs.
+        </p>
 
-  <h3>12. Termination</h3>
-  <p>
-    You may stop using the App at any time by uninstalling it from your device.
-  </p>
-  <p>
-    Uninstalling the App does not automatically cancel any active subscriptions – you must manage and cancel them
-    in your Apple ID account settings.
-  </p>
-  <p>
-    The Developer may, in particular cases, decide to discontinue or remove the App from the App Store,
-    for example for technical, business or legal reasons.
-  </p>
-  <p>
-    Discontinuation of the App may mean that no further updates, support or compatibility with future iOS versions will be provided,
-    without prejudice to rights that you may have under Apple’s terms and applicable consumer law.
-  </p>
+        <h3>9. Prices and subscriptions</h3>
+        <p>
+          In-app purchases (subscriptions and lifetime access) are processed via the App Store and are governed by Apple’s terms
+          and the Apple Media Services agreement.
+        </p>
+        <p>
+          The current prices of subscriptions and lifetime access are always shown in the App (or in the App Store)
+          before you confirm a purchase. Prices may vary by country and currency and may change in the future.
+        </p>
+        <p>
+          Changes in price do not affect periods that have already been paid for – they remain valid until the end
+          of the current billing period.
+        </p>
+        <p>
+          Purchasing a lifetime (one-time) license does not automatically cancel any active subscription.
+          If you no longer wish to be billed for a subscription, you must cancel it yourself in your Apple ID account settings.
+        </p>
+        <p>
+          If the price of future subscription renewals changes, you may be notified in advance and will have the option
+          to cancel renewal before the new price is charged, in accordance with App Store rules.
+        </p>
+        <p>
+          Subscriptions renew automatically unless you cancel renewal in your Apple ID account settings at least 24 hours
+          before the end of the current billing period.
+        </p>
+        <p>
+          “Lifetime” access means access to the unlocked features of the App for an indefinite period of time; however:
+        </p>
+        <ul>
+          <li>it does not guarantee that the App or its features will remain available or unchanged forever,</li>
+          <li>the Developer may in the future decide to discontinue or remove the App from the App Store
+            (for example, for technical, legal or business reasons).</li>
+        </ul>
+        <p>
+          Refunds for in-app purchases are handled in accordance with Apple’s policies.
+          As a general rule, the Developer does not process payment-related claims outside the App Store system.
+        </p>
 
-  <h3>13. Changes to these Terms</h3>
-  <p>
-    The Developer may modify these Terms, in particular in case of:
-  </p>
-  <ul>
-    <li>changes in the App’s functionality,</li>
-    <li>changes in the pricing or payment model,</li>
-    <li>changes in applicable law or regulatory requirements,</li>
-    <li>changes on the side of data providers (e.g. GIOŚ, ESA).</li>
-  </ul>
-  <p>
-    Updated Terms will be made available in the App or at a designated URL.
-    Your continued use of the App after the updated Terms take effect means that you accept the new version.
-  </p>
+        <h3>10. Technical requirements and acceptable use</h3>
+        <p>To use the App, you need:</p>
+        <ul>
+          <li>a compatible iOS device and system version as specified in the App Store,</li>
+          <li>an Internet connection,</li>
+          <li>an active Apple ID account.</li>
+        </ul>
+        <p>
+          You must use the App in accordance with applicable law, these Terms and good practice.
+        </p>
+        <p>In particular, you must not:</p>
+        <ul>
+          <li>attempt to interfere with or disrupt the App or the servers and networks used by the App,</li>
+          <li>decompile, reverse engineer, modify or distribute the App beyond what is permitted under Apple’s license terms,</li>
+          <li>use the App in a way that may overload or disrupt services provided by GIOŚ, ESA or other data providers.</li>
+        </ul>
+
+        <h3>11. Intellectual property</h3>
+        <p>
+          The App and all of its elements (including the source code, interface, graphics, logo, name and textual content)
+          are protected by copyright and other intellectual property rights and belong to the Developer or other respective rights holders.
+        </p>
+        <p>
+          You are granted a non-exclusive, non-transferable license to use the App only as permitted under Apple’s terms and these Terms,
+          for your personal use, on devices linked to your Apple ID account.
+        </p>
+        <p>Without the Developer’s prior written consent, you may not:</p>
+        <ul>
+          <li>copy, modify, distribute or publicly display the App or any part of it beyond what is allowed by applicable law,</li>
+          <li>use the App’s name, logo or other designations in a way that may mislead others as to the Developer or the nature of the service.</li>
+        </ul>
+
+        <h3>12. Termination</h3>
+        <p>
+          You may stop using the App at any time by uninstalling it from your device.
+        </p>
+        <p>
+          Uninstalling the App does not automatically cancel any active subscriptions – you must manage and cancel them
+          in your Apple ID account settings.
+        </p>
+        <p>
+          The Developer may, in particular cases, decide to discontinue or remove the App from the App Store,
+          for example for technical, business or legal reasons.
+        </p>
+        <p>
+          Discontinuation of the App may mean that no further updates, support or compatibility with future iOS versions will be provided,
+          without prejudice to rights that you may have under Apple’s terms and applicable consumer law.
+        </p>
+
+        <h3>13. Changes to these Terms</h3>
+        <p>
+          The Developer may modify these Terms, in particular in case of:
+        </p>
+        <ul>
+          <li>changes in the App’s functionality,</li>
+          <li>changes in the pricing or payment model,</li>
+          <li>changes in applicable law or regulatory requirements,</li>
+          <li>changes on the side of data providers (e.g. GIOŚ, ESA).</li>
+        </ul>
+        <p>
+          Updated Terms will be made available in the App or at a designated URL.
+          Your continued use of the App after the updated Terms take effect means that you accept the new version.
+        </p>
+
+      </div>
+    </section>
+  </main>
+</div>
 </body>
 </html>
