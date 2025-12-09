@@ -1,58 +1,244 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Airlytica – legal documents</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --bg: #0b1120;
+      --card: #020617;
+      --card-border: rgba(148, 163, 184, 0.25);
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --accent-strong: #0ea5e9;
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --radius-xl: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
+      --max-width: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 16px;
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
+
+    .page {
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .app-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 4px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      width: fit-content;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .app-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-soft);
+    }
+
     h1 {
-      margin-bottom: 0.5rem;
+      font-size: clamp(26px, 3.8vw, 32px);
+      margin: 0;
+      letter-spacing: -0.03em;
     }
-    p {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
+
+    .subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 700px;
     }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08) 0, rgba(15, 23, 42, 0.96) 45%, #020617 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 55%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
     h2 {
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
+      margin: 14px 0 6px;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      color: var(--text);
     }
+
+    .section-desc {
+      margin: 0 0 6px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .link-group {
+      margin: 4px 0 12px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .link-group li {
+      margin: 2px 0;
+    }
+
     a {
-      display: block;
-      margin: 4px 0;
-      font-size: 1.0rem;
+      font-size: 14px;
+      color: var(--accent-strong);
       text-decoration: none;
-      color: #0369a1;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    .lang-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-left: 6px;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-dim);
     }
   </style>
 </head>
 <body>
-  <h1>Airlytica – legal documents</h1>
-  <p>
-    On this page, you will find the current legal documents related to the use of the Airlytica application.
-    / Na tej stronie znajdziesz aktualne dokumenty prawne związane z korzystaniem z aplikacji Airlytica.
-  </p>
+<div class="page">
+  <main class="shell" aria-labelledby="page-title">
+    <header>
+      <div class="app-pill">
+        <span class="app-dot"></span>
+        <span>Airlytica · Legal / Dokumenty</span>
+      </div>
+      <h1 id="page-title">Airlytica – legal documents</h1>
+      <p class="subtitle">
+        On this page, you will find the current legal documents related to the use of the Airlytica application.  
+        / Na tej stronie znajdziesz aktualne dokumenty prawne związane z korzystaniem z aplikacji Airlytica.
+      </p>
+    </header>
 
-  <h2>Terms of use / Regulamin</h2>
-  <a href="terms_of_user.html">Terms and conditions of use of the Airlytica application</a>
-  <a href="terms_of_user.html">Regulamin korzystania z aplikacji Airlytica</a>
+    <section class="card" aria-label="Legal documents list">
+      <div class="card-inner">
 
-  <h2>Privacy policy / Polityka prywatności</h2>
-  <a href="privacy_policy.html">Privacy policy of the Airlytica application</a>
-  <a href="privacy_policy.html">Polityka prywatności aplikacji Airlytica</a>
+        <h2>Terms of use / Regulamin</h2>
+        <p class="section-desc">
+          Conditions for using the Airlytica app. / Zasady korzystania z aplikacji Airlytica.
+        </p>
+        <ul class="link-group">
+          <li>
+            <a href="terms_of_user.html">
+              Terms and conditions of use of the Airlytica application
+              <span class="lang-tag">EN</span>
+            </a>
+          </li>
+          <li>
+            <a href="terms_of_user.html">
+              Regulamin korzystania z aplikacji Airlytica
+              <span class="lang-tag">PL</span>
+            </a>
+          </li>
+        </ul>
 
-  <h2>Support / Pomoc</h2>
-  <a href="support.html">Support for Airlytica users</a>
-  <a href="support.html">Pomoc dla użytkowników Airlytica</a>
+        <h2>Privacy policy / Polityka prywatności</h2>
+        <p class="section-desc">
+          Information about how your data is processed. / Informacje o tym, jak przetwarzane są Twoje dane.
+        </p>
+        <ul class="link-group">
+          <li>
+            <a href="privacy_policy.html">
+              Privacy policy of the Airlytica application
+              <span class="lang-tag">EN</span>
+            </a>
+          </li>
+          <li>
+            <a href="privacy_policy.html">
+              Polityka prywatności aplikacji Airlytica
+              <span class="lang-tag">PL</span>
+            </a>
+          </li>
+        </ul>
+
+        <h2>Support / Pomoc</h2>
+        <p class="section-desc">
+          Contact details and support information. / Dane kontaktowe oraz informacje o wsparciu.
+        </p>
+        <ul class="link-group">
+          <li>
+            <a href="support.html">
+              Support for Airlytica users
+              <span class="lang-tag">EN</span>
+            </a>
+          </li>
+          <li>
+            <a href="support.html">
+              Pomoc dla użytkowników Airlytica
+              <span class="lang-tag">PL</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="note">
+          Links above open detailed documents on separate pages. / Powyższe linki otwierają szczegółowe dokumenty na osobnych stronach.
+        </p>
+      </div>
+    </section>
+  </main>
+</div>
 </body>
 </html>
